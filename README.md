@@ -23,7 +23,7 @@ A new Portfolio Website made using Flutter for Web.
  ## How to make it yours? 
 
 ### Step 1: Clone this project
-### Step 2: Head over to <a href='https://github.com/khurramrizvi/Portfolio/blob/main/lib/utilities/strings.dart'>strings.dart</a> file
+### Step 2: Head over to <a href='https://github.com/khurramrizvi/Portfolio/blob/main/lib/utilities/strings.dart'>strings.dart</a> file under ```Portfolio/lib/utilities/strings.dart ```
 ### Step 3: Edit the values of variables in strings.dart file.
 
 ``` dart
@@ -116,6 +116,8 @@ final String kGithubURL = 'https://github.com/khurramrizvi';
  
 ## If you like my work and want to show some ❤️, please consider giving a ⭐️ to this Repository.
 
+## Support me
+ [![Buy Me A Coffee](https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png)](https://www.buymeacoffee.com/khurramrizvi)
 
 
  
