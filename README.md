@@ -5,7 +5,10 @@ A new Portfolio Website made using Flutter for Web.
 * Performance is good, but can be improved.
 * Note: Flutter web is still in beta.
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/641c1d32-a167-4e6e-bb1c-3d78dde8aa6d/deploy-status)](https://app.netlify.com/sites/khurramrizvi/deploys)   &nbsp; [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 ### Live Preview at: <a href='https://khurramrizvi.netlify.app'>khurramrizvi.netlify.app</a>
+
 
 ## Screenshot
 <table>
@@ -15,9 +18,9 @@ A new Portfolio Website made using Flutter for Web.
       <td><img src='demo/ss_mob2.png' width=320></td>
    </tr>
  </table>
+
  
- 
- ## How to make it yours?
+ ## How to make it yours? 
 
 ### Step 1: Clone this project
 ### Step 2: Head over to <a href='https://github.com/khurramrizvi/Portfolio/blob/main/lib/utilities/strings.dart'>strings.dart</a> file
@@ -112,5 +115,7 @@ final String kGithubURL = 'https://github.com/khurramrizvi';
  ### Step 6: Enjoy 😉
  
 ## If you like my work and want to show some ❤️, please consider giving a ⭐️ to this Repository.
+
+
 
  
