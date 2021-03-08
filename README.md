@@ -29,6 +29,9 @@ A new Portfolio Website made using Flutter for Web.
 ``` dart
 strings.dart
 
+//website title
+final String kTitle = 'Khurram Rizvi | Portfolio';
+
 //final strings used in Navbar
 final String kAbout = 'About';
 final String kServices = 'Services';
