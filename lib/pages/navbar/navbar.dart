@@ -110,8 +110,7 @@ Widget websiteIcon() {
         Text(
           kIconRemainingLetters,
           // style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          style: GoogleFonts.poppins(
-              color: Colors.black, fontSize: 25, fontWeight: FontWeight.w600),
+          style: GoogleFonts.poppins(fontSize: 25, fontWeight: FontWeight.w600),
         ),
       ],
     ),
@@ -158,7 +157,7 @@ Widget navBarItems(ScrollController scrollController) {
 Widget navBarOptions(String title, int position, Function function) {
   return InkWell(
     onTap: function,
-    hoverColor: Colors.grey[200],
+    // hoverColor: Colors.grey[200],
     borderRadius: BorderRadius.circular(16),
     child: Container(
       padding: EdgeInsets.all(8),
@@ -166,8 +165,7 @@ Widget navBarOptions(String title, int position, Function function) {
       child: Text(
         title,
         // style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-        style: GoogleFonts.poppins(
-            color: Colors.black, fontSize: 12, fontWeight: FontWeight.w600),
+        style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w600),
       ),
     ),
   );

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio_app/providers/theme_provider.dart';
 import 'package:portfolio_app/providers/utility_provider.dart';
 import 'package:portfolio_app/utilities/strings.dart';
 import 'package:portfolio_app/widgets/icon_widgets.dart';
@@ -29,6 +30,7 @@ class _DesktopContactPageState extends State<DesktopContactPage> {
   var width;
   var height;
   var utilityProvider;
+  var themeProvider;
   ScrollController scrollController;
 
   @override
@@ -36,6 +38,7 @@ class _DesktopContactPageState extends State<DesktopContactPage> {
     width = MediaQuery.of(context).size.width;
     height = MediaQuery.of(context).size.height;
     utilityProvider = Provider.of<UtilityProvider>(context);
+    themeProvider = Provider.of<ThemeProvider>(context);
     scrollController = utilityProvider.getScrollController();
     return Container(
       width: width,
@@ -64,7 +67,7 @@ class _DesktopContactPageState extends State<DesktopContactPage> {
           SizedBox(
             height: 60,
           ),
-          footerWidget()
+          footerWidget(themeProvider, scrollController)
         ],
       ),
     );
@@ -80,12 +83,14 @@ class _TabletContactPageState extends State<TabletContactPage> {
   var width;
   var height;
   var utilityProvider;
+  var themeProvider;
   ScrollController scrollController;
   @override
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
     height = MediaQuery.of(context).size.height;
     utilityProvider = Provider.of<UtilityProvider>(context);
+    themeProvider = Provider.of<ThemeProvider>(context);
     scrollController = utilityProvider.getScrollController();
     return Container(
       width: width,
@@ -114,7 +119,7 @@ class _TabletContactPageState extends State<TabletContactPage> {
           SizedBox(
             height: 60,
           ),
-          footerWidget()
+          footerWidget(themeProvider, scrollController)
         ],
       ),
     );
@@ -130,12 +135,14 @@ class _MobileContactPageState extends State<MobileContactPage> {
   var width;
   var height;
   var utilityProvider;
+  var themeProvider;
   ScrollController scrollController;
   @override
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
     height = MediaQuery.of(context).size.height;
     utilityProvider = Provider.of<UtilityProvider>(context);
+    themeProvider = Provider.of<ThemeProvider>(context);
     scrollController = utilityProvider.getScrollController();
     return Container(
       width: width,
@@ -164,7 +171,7 @@ class _MobileContactPageState extends State<MobileContactPage> {
           SizedBox(
             height: 60,
           ),
-          footerWidget()
+          footerWidget(themeProvider, scrollController)
         ],
       ),
     );
@@ -175,12 +182,12 @@ Widget emailContactWidget(double height, double width, double sayHelloFontSize,
     double emailIDFontSize) {
   return Material(
     elevation: 15,
-    color: Colors.white,
+    //color: Colors.white,
     borderRadius: BorderRadius.circular(10),
     child: Container(
       height: height,
       width: width,
-      color: Colors.white,
+      //color: Colors.white,
       padding: EdgeInsets.all(20),
       child: Column(
         // crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -201,7 +208,8 @@ Widget emailContactWidget(double height, double width, double sayHelloFontSize,
   );
 }
 
-Widget footerWidget() {
+Widget footerWidget(
+    ThemeProvider themeProvider, ScrollController scrollController) {
   return Container(
     height: 100,
     color: Colors.grey.withOpacity(0.1),
@@ -209,11 +217,48 @@ Widget footerWidget() {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
-          kRightsReserved,
-          textAlign: TextAlign.center,
-          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 12),
-        )
+        Row(
+          //crossAxisAlignment: CrossAxisAlignment.center,
+          // mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Expanded(
+              flex: 1,
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20.0),
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      kRightsReserved,
+                      textAlign: TextAlign.center,
+                      style:
+                          TextStyle(fontWeight: FontWeight.w600, fontSize: 12),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 20.0),
+              child: Row(
+                //mainAxisSize: MainAxisSize.max,
+                //mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  IconButton(
+                      icon: Icon(Icons.border_left_outlined),
+                      onPressed: () async {
+                        await scrollController.animateTo(
+                            scrollController.position.minScrollExtent,
+                            duration: Duration(seconds: 1),
+                            curve: Curves.ease);
+                        themeProvider.toggleTheme();
+                      }),
+                ],
+              ),
+            )
+          ],
+        ),
       ],
     ),
   );
@@ -273,8 +318,7 @@ Widget websiteIcon() {
         Text(
           kIconRemainingLetters,
           // style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          style: GoogleFonts.poppins(
-              color: Colors.black, fontSize: 25, fontWeight: FontWeight.w600),
+          style: GoogleFonts.poppins(fontSize: 25, fontWeight: FontWeight.w600),
         ),
       ],
     ),
@@ -330,7 +374,7 @@ Widget navBarItems(ScrollController scrollController) {
 Widget navBarOptions(String title, int position, Function function) {
   return InkWell(
     onTap: function,
-    hoverColor: Colors.grey[200],
+    //hoverColor: Colors.grey[200],
     borderRadius: BorderRadius.circular(16),
     child: Container(
       padding: EdgeInsets.all(8),
@@ -338,8 +382,7 @@ Widget navBarOptions(String title, int position, Function function) {
       child: Text(
         title,
         // style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-        style: GoogleFonts.poppins(
-            color: Colors.black, fontSize: 12, fontWeight: FontWeight.w600),
+        style: GoogleFonts.poppins(fontSize: 12, fontWeight: FontWeight.w600),
       ),
     ),
   );

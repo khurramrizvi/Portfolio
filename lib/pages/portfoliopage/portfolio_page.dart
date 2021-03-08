@@ -207,7 +207,7 @@ Widget mySelectedWorkWidget(double fontSize) {
 Widget workShowCaseImages(
     double imageHeight, double imageWidth, String imageUrl) {
   return Material(
-    color: Colors.white,
+    //color: Colors.white,
     borderRadius: BorderRadius.circular(8),
     elevation: 20,
     child: Container(

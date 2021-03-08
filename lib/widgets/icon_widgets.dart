@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_app/utilities/strings.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 Widget iconWidget(String iconName) {
@@ -8,7 +9,7 @@ Widget iconWidget(String iconName) {
       hoverColor: Colors.blue.withOpacity(0.5),
       child: Image(image: AssetImage('lib/icons/linkedin.png')),
       onTap: () {
-        launchUrl('https://www.linkedin.com/in/khurramrizvi/');
+        launchUrl(kLinkedInURL);
       },
     );
   } else if (iconName == 'twitter') {
@@ -16,16 +17,16 @@ Widget iconWidget(String iconName) {
       borderRadius: BorderRadius.all(Radius.circular(40)),
       hoverColor: Colors.lightBlueAccent.withOpacity(0.5),
       onTap: () {
-        launchUrl('https://twitter.com/khurram_rizvi72');
+        launchUrl(kTwitterURL);
       },
       child: Image(image: AssetImage('lib/icons/twitter.png')),
     );
   } else {
     return InkWell(
         borderRadius: BorderRadius.all(Radius.circular(40)),
-        hoverColor: Colors.black.withOpacity(0.3),
+        hoverColor: Colors.grey.withOpacity(0.3),
         onTap: () {
-          launchUrl('https://github.com/khurramrizvi');
+          launchUrl(kGithubURL);
         },
         child: Image(image: AssetImage('lib/icons/github.png')));
   }
