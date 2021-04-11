@@ -7,7 +7,13 @@ Widget iconWidget(String iconName) {
     return InkWell(
       borderRadius: BorderRadius.all(Radius.circular(40)),
       hoverColor: Colors.blue.withOpacity(0.5),
-      child: Image(image: AssetImage('lib/icons/linkedin.png')),
+      child: Container(
+          width: 48,
+          height: 48,
+          child: Container(
+              width: 48,
+              height: 48,
+              child: Image(image: AssetImage('lib/icons/linkedin_2x.png')))),
       onTap: () {
         launchUrl(kLinkedInURL);
       },
@@ -19,7 +25,10 @@ Widget iconWidget(String iconName) {
       onTap: () {
         launchUrl(kTwitterURL);
       },
-      child: Image(image: AssetImage('lib/icons/twitter.png')),
+      child: Container(
+          width: 48,
+          height: 48,
+          child: Image(image: AssetImage('lib/icons/twitter_2x.png'))),
     );
   } else {
     return InkWell(
@@ -28,7 +37,10 @@ Widget iconWidget(String iconName) {
         onTap: () {
           launchUrl(kGithubURL);
         },
-        child: Image(image: AssetImage('lib/icons/github.png')));
+        child: Container(
+            width: 48,
+            height: 48,
+            child: Image(image: AssetImage('lib/icons/github_2x.png'))));
   }
 }
 

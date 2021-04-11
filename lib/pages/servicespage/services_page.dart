@@ -40,7 +40,7 @@ class _DesktopServicesPageState extends State<DesktopServicesPage> {
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 0.1 * width),
       width: width,
-      height: height,
+      // height: height,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -124,10 +124,13 @@ class _TabletServicesPageState extends State<TabletServicesPage> {
     height = MediaQuery.of(context).size.height;
     return Container(
       width: width,
-      height: height,
+      //height: height,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
+          SizedBox(
+            height: 30,
+          ),
           Center(child: whatIDoWidget(30)),
           SizedBox(
             height: 30,
@@ -207,9 +210,12 @@ class _MobileServicesPageState extends State<MobileServicesPage> {
       //color: Colors.red,
       padding: EdgeInsets.only(left: 20, right: 20),
       width: width,
-      height: height,
+      //height: height,
       child: Column(
         children: [
+          SizedBox(
+            height: 30,
+          ),
           whatIDoWidget(30),
           SizedBox(
             height: 30,
@@ -404,7 +410,7 @@ Widget whatIdoCardMobile(double height, double width, Color color,
     children: [
       Container(
         //color: Colors.black,
-        height: height / 6,
+        // height: height / 6,
         width: width,
         child: Material(
           borderRadius: BorderRadius.all(Radius.circular(6)),
@@ -417,7 +423,7 @@ Widget whatIdoCardMobile(double height, double width, Color color,
                   color: color,
                 ),
                 width: 120,
-                height: height / 6,
+                height: 130,
                 child: Center(
                   child: Image(
                       //fit: BoxFit.cover,

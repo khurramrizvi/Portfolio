@@ -55,7 +55,7 @@ class _DesktopContactPageState extends State<DesktopContactPage> {
           SizedBox(
             height: 60,
           ),
-          websiteIcon(),
+          websiteIcon(scrollController),
           SizedBox(
             height: 60,
           ),
@@ -107,7 +107,7 @@ class _TabletContactPageState extends State<TabletContactPage> {
           SizedBox(
             height: 60,
           ),
-          websiteIcon(),
+          websiteIcon(scrollController),
           SizedBox(
             height: 60,
           ),
@@ -159,7 +159,7 @@ class _MobileContactPageState extends State<MobileContactPage> {
           SizedBox(
             height: 60,
           ),
-          websiteIcon(),
+          websiteIcon(scrollController),
           SizedBox(
             height: 60,
           ),
@@ -197,7 +197,7 @@ Widget emailContactWidget(double height, double width, double sayHelloFontSize,
             kContactCardTitle,
             style: TextStyle(fontSize: sayHelloFontSize, color: Colors.grey),
           ),
-          Text(
+          SelectableText(
             kEmail,
             style: TextStyle(
                 fontSize: emailIDFontSize, fontWeight: FontWeight.bold),
@@ -282,9 +282,17 @@ Widget iconBarWidget() {
   );
 }
 
-Widget websiteIcon() {
-  return GestureDetector(
-    onTap: () {},
+Widget websiteIcon(ScrollController scrollController) {
+  return InkWell(
+    splashColor: Colors.transparent,
+    hoverColor: Colors.transparent,
+    highlightColor: Colors.transparent,
+    onTap: () async {
+      await scrollController.animateTo(
+          scrollController.position.minScrollExtent,
+          duration: Duration(seconds: 1),
+          curve: Curves.ease);
+    },
     child: Row(
       mainAxisSize: MainAxisSize.max,
       mainAxisAlignment: MainAxisAlignment.center,

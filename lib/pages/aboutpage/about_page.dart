@@ -58,7 +58,7 @@ class _MobileAboutMeState extends State<MobileAboutMe> {
 
     return Container(
         padding: EdgeInsets.only(top: 20, left: 20, right: 20),
-        height: 1 * height,
+        //height: 1 * height,
         width: width,
         //padding: const EdgeInsets.symmetric(horizontal: 48.0, vertical: 32),
         child: Column(
@@ -70,12 +70,12 @@ class _MobileAboutMeState extends State<MobileAboutMe> {
             ),
             // myImageWidget(height / 1.5, width / 2)
             Container(
-              height: 0.6 * height,
+              //height: 0.6 * height,
               //width: 0.4 * width,
               child: ClipRRect(
                 borderRadius: BorderRadius.all(Radius.circular(8)),
-                child: Image.network(
-                  kProfileImageURL,
+                child: Image(
+                  image: AssetImage(kProfileImageURL),
                   fit: BoxFit.cover,
                 ),
               ),
@@ -118,7 +118,7 @@ class _TabletAboutMeState extends State<TabletAboutMe> {
     width = MediaQuery.of(context).size.width;
     height = MediaQuery.of(context).size.height;
     return Container(
-      height: height,
+      // height: height,
       width: width,
       //padding: const EdgeInsets.symmetric(horizontal: 48.0, vertical: 32),
       // padding: EdgeInsets.only(left: 0.001 * width, right: 0.02 * width),
@@ -157,8 +157,8 @@ Widget myImageWidget(double height, double width) {
     //width: 0.4 * width,
     child: ClipRRect(
       borderRadius: BorderRadius.all(Radius.circular(10)),
-      child: Image.network(
-        kProfileImageURL,
+      child: Image(
+        image: AssetImage(kProfileImageURL),
         fit: BoxFit.cover,
       ),
     ),
@@ -257,7 +257,7 @@ Widget stackedWidgets(double height, double width) {
 Widget tabletViewWidget(double width, double height) {
   return Container(
       padding: EdgeInsets.only(left: 0.02 * width, right: 0.02 * width),
-      height: height,
+      // height: height,
       width: width,
       //padding: const EdgeInsets.symmetric(horizontal: 48.0, vertical: 32),
       child: Column(
@@ -267,7 +267,17 @@ Widget tabletViewWidget(double width, double height) {
           SizedBox(
             height: 60,
           ),
-          myImageWidget(height / 1, width / 2),
+          Container(
+            //height: 0.5 * height,
+            //width: 0.4 * width,
+            child: ClipRRect(
+              borderRadius: BorderRadius.all(Radius.circular(10)),
+              child: Image(
+                image: AssetImage(kProfileImageURL),
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
           SizedBox(
             height: 60,
           ),

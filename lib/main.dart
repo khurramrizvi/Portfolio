@@ -4,7 +4,6 @@ import 'package:portfolio_app/providers/theme_provider.dart';
 import 'package:portfolio_app/providers/utility_provider.dart';
 import 'package:portfolio_app/utilities/strings.dart';
 import 'package:provider/provider.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,6 +28,7 @@ class _PortfolioAppState extends State<PortfolioApp> {
     return MaterialApp(
         title: kTitle,
         theme: themeProvider.getTheme,
-        home: Scaffold(body: HomePage()));
+        home: Scaffold(
+            body: Scrollbar(radius: Radius.circular(12), child: HomePage())));
   }
 }

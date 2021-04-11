@@ -99,7 +99,7 @@ class _TabletPorfolioPageState extends State<TabletPortfolioPage> {
 
     return Container(
       width: width,
-      height: height,
+      //height: height,
       padding: EdgeInsets.only(left: 0.08 * width),
       child: Row(
         children: [
@@ -108,13 +108,16 @@ class _TabletPorfolioPageState extends State<TabletPortfolioPage> {
               physics: NeverScrollableScrollPhysics(),
               child:
                   Column(crossAxisAlignment: CrossAxisAlignment.end, children: [
-                workShowCaseImages(0.4 * height, 0.4 * width, kWorkImageUrl1),
+                SizedBox(
+                  height: 60,
+                ),
+                workShowCaseImages(400, 0.4 * width, kWorkImageUrl1),
                 SizedBox(
                   height: 20,
                 ),
-                workShowCaseImages(0.4 * height, 0.4 * width, kWorkImageUrl2),
+                workShowCaseImages(400, 0.4 * width, kWorkImageUrl2),
                 SizedBox(
-                  height: 20,
+                  height: 30,
                 ),
                 viewAllWorkButtonWidget()
               ]),
@@ -128,15 +131,18 @@ class _TabletPorfolioPageState extends State<TabletPortfolioPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                SizedBox(
+                  height: 60,
+                ),
                 mySelectedWorkWidget(30),
                 SizedBox(
                   height: 20,
                 ),
-                workShowCaseImages(0.4 * height, 0.4 * width, kWorkImageUrl3),
+                workShowCaseImages(400, 0.4 * width, kWorkImageUrl3),
                 SizedBox(
                   height: 20,
                 ),
-                workShowCaseImages(0.4 * height, 0.4 * width, kWorkImageUrl4),
+                workShowCaseImages(400, 0.4 * width, kWorkImageUrl4),
                 SizedBox(
                   height: 20,
                 ),
@@ -172,21 +178,21 @@ class _MobilePortfolioPageState extends State<MobilePortfolioPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 20,
+              height: 30,
             ),
-            mySelectedWorkWidget(30),
+            Center(child: mySelectedWorkWidget(30)),
+            SizedBox(
+              height: 30,
+            ),
+            workShowCaseImages(350, 1 * width, kWorkImageUrl1),
             SizedBox(
               height: 20,
             ),
-            workShowCaseImages(0.3 * height, 1 * width, kWorkImageUrl1),
+            workShowCaseImages(350, 1 * width, kWorkImageUrl3),
             SizedBox(
               height: 20,
             ),
-            workShowCaseImages(0.3 * height, 1 * width, kWorkImageUrl3),
-            SizedBox(
-              height: 20,
-            ),
-            workShowCaseImages(0.3 * height, 1 * width, kWorkImageUrl4),
+            workShowCaseImages(350, 1 * width, kWorkImageUrl4),
             SizedBox(
               height: 20,
             ),

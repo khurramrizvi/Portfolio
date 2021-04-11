@@ -13,7 +13,7 @@ final String kName = "I'm Khurram Rizvi";
 final String kDescription =
     'Freelance Web & Mobile Developer & Tech Enthusiast';
 final String kProfileImageURL =
-    'https://avatars2.githubusercontent.com/u/29674485?s=460&u=bb124332a205ec974d682e384facc441b9fb07ac&v=4';
+    'lib/images/myImage.jpg'; //bundling an optimized image for better performance
 
 //final Strings for services page
 final String kWhatIdo = 'What I Do';
@@ -41,6 +41,7 @@ final String kViewAllWork = 'View All Work';
 final String kViewAllWorkLink =
     'https://github.com/khurramrizvi'; //set up any url to demonstrate all your work, I am setting my github url
 
+//add optimized images for better load time and smooth scroll
 final String kWorkImageUrl1 = 'lib/images/calender.png';
 final String kWorkImageUrl2 = 'lib/images/crypto.png';
 final String kWorkImageUrl3 = 'lib/images/chat.png';
