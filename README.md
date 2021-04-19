@@ -1,9 +1,10 @@
 # Portfolio 
 
 A new Portfolio Website made using Flutter for Web.
-* Implemented using flutter framework.
-* Performance is good, but can be improved.
-* Note: Flutter web is still in beta.
+* Implemented using flutter framework 💜
+* Performance optimization done ⚡
+* Built with Flutter 2.0, adaptive to on any device viewport 👀
+* Dark Mode Supported 🌓
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/641c1d32-a167-4e6e-bb1c-3d78dde8aa6d/deploy-status)](https://app.netlify.com/sites/khurramrizvi/deploys)   &nbsp; [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
