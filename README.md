@@ -97,7 +97,7 @@ final String kTwitterURL = 'https://twitter.com/khurram_rizvi72';
 final String kGithubURL = 'https://github.com/khurramrizvi';
 ```
 
-### Step 4: Build the project with default Renderer (Canvas KIT)
+### Step 4: Build the project with default Renderer (uses Canvas Kit on Desktop and Html Renderer on Mobile) [Preferred]
 
  ``` dart
  flutter build web
@@ -105,7 +105,7 @@ final String kGithubURL = 'https://github.com/khurramrizvi';
  
 ### OR
 
-### Step 4: Building the project using HTML Renderer (Preferred)
+### Step 4: Building the project using HTML Renderer (Optimized build for Mobile, but also uses the same rendering on Desktop)
 ``` dart
  flutter run --release --web-renderer html
 ```
